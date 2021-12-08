@@ -24,29 +24,6 @@ df$total = NULL
 
 
 
-# ajustes
-# 1. Total m54.5 [49.491]
-sum(df$total_m545)
-
-# 2. Somatórios dos Benefícios [49.495]
-df %>% select(amp_aocial_pessoa_portadora_aeficiencia:auxilio_doenca_revidenciario) %>% sum()
-
-# 3. Somatórios concessões [49.491]
-df %>% select(conc_base_artigo_27_inciso_ii_do_rbps:concessao_normal) %>% sum()
-
-# 4. auto - trab. avulso [49.493]
-df %>% select(autonomo:trabalhador_avulso) %>% sum()
-
-# 5. Somatório estados [49.626]
-df %>% select(acre:tocantins) %>% sum()
-
-# 6. Link no portifólio
-
-
-
-
-
-
 # Item 1 --------------------------------
 df_1_tab <- tibble('mes' = df$mes,
                    'mes_num' = df$mes_num,
@@ -241,7 +218,6 @@ df %>%
                                     df %>% filter(ano == 2020) %>% select(rural), 
                                     na.rm=T)
   )
-
 
 
 
@@ -479,8 +455,14 @@ df_categ_total <- df_categ_total %>% summarise(
 ) %>% melt() %>% tibble()
 
 soma_total <- sum(df_categ_total$value)
-df_categ_total$prop <- df_categ_total$value / soma_total *100
-df_categ_total
+df_categ_total$prop <- df_categ_total$value / soma_total
+df_categ_total$ic_inf <- df_categ_total$prop - 1.96 * sqrt((df_categ_total$prop*(1-df_categ_total$prop))/(soma_total-1))
+df_categ_total$ic_sup <- df_categ_total$prop + 1.96 * sqrt((df_categ_total$prop*(1-df_categ_total$prop))/(soma_total-1))
+df_categ_total 
+
+IC 95% proporção = p + 1.96 * sqrt((p * (1- p)) / (n))
+
+
 
 
 ## Soma categotias 2019 ------------------------------------
@@ -573,7 +555,7 @@ df_prop %>%
 
 
 # Item 6 --------------------------------------------------------------------------
-
+df_outro <- read_csv('dados/dados_concedidos_outros_CIDs_2019-2020_igor.csv')
 df <- df %>% left_join(df_outro, by = 'X1')
 
 'M54' # Dorsalgia
@@ -588,11 +570,30 @@ df_loko <- df %>% select(X1, total_m545, m54, m544, m543, i21, c61, j18) %>% mel
 
 
 df_loko %>%
+  mutate(variable = case_when(
+    variable == "total_m545" ~ "M54.5",
+    variable == "m54"        ~ "M54",
+    variable == "m544"       ~ "M54.4",
+    variable == "m543"       ~ "M54.3",
+    variable == "i21"        ~ "I21",
+    variable == "c61"        ~ "C61",
+    variable == "j18"        ~ "J18"
+  )) %>% 
+  mutate(variable = factor(variable, levels = c("M54",
+                                                "M54.3",
+                                                "M54.4",
+                                                "I21",
+                                                "C61",
+                                                "J18",
+                                                "M54.5"))) %>% 
   ggplot(aes(x=factor(X1), y=value)) + 
   geom_bar(stat='identity') +
-  facet_grid('variable')
+  facet_grid('variable') +
+  theme_classic() + 
+  ylab('Contagem de Benefício por CID-10') +
+  xlab('Meses (Jan de 2019 a Dez de 2020)')
 
-
+ggsave("grafico 4.png", dpi=300)
 
 
 # item 7 ----------------------------------------------------------------------------
