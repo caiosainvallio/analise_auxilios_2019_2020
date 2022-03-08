@@ -24,6 +24,11 @@ df$total = NULL
 
 
 
+
+df$mes = df$mes.x
+df$ano = df$ano.x
+df$mes_num = df$mes_num.x
+
 # Item 1 --------------------------------
 df_1_tab <- tibble('mes' = df$mes,
                    'mes_num' = df$mes_num,
@@ -37,7 +42,7 @@ df_1_tab <- df_1_tab %>% melt(id=c('mes', 'ano', 'mes_num'))
 
 
 
-df_1_tab %>% filter(ano == 2019) %>% 
+plot1 <- df_1_tab %>% filter(ano == 2019) %>% 
   ggplot(aes(x=factor(mes_num), y=value/1000, fill=variable)) + 
   geom_bar(stat='identity', position=position_dodge()) +
   xlab('Meses') + ylab('Contagem de pedidos (/1000)') +
@@ -46,7 +51,10 @@ df_1_tab %>% filter(ano == 2019) %>%
   theme_classic() +
   guides(fill=guide_legend(title="Tipo de pedido"))
 
-df_1_tab %>% filter(ano == 2020) %>% 
+ggsave(file="plot1.svg", plot=plot1)
+
+
+plot2 <- df_1_tab %>% filter(ano == 2020) %>% 
   ggplot(aes(x=factor(mes_num), y=value/1000, fill=variable)) + 
   geom_bar(stat='identity', position=position_dodge()) +
   xlab('Meses') + ylab('Contagem de pedidos (/1000)') +
@@ -56,7 +64,9 @@ df_1_tab %>% filter(ano == 2020) %>%
   guides(fill=guide_legend(title="Tipo de pedido"))
 
 
-df_1_tab %>% 
+ggsave(file="plot2.svg", plot=plot2)
+
+plot3 <- df_1_tab %>% 
   ggplot(aes(x=factor(mes_num), y=value/1000, fill=variable)) + 
   geom_bar(stat='identity', position=position_dodge()) +
   xlab('Meses') + ylab('Contagem de pedidos (/1000)') +
@@ -65,7 +75,7 @@ df_1_tab %>%
   facet_grid('ano') +
   guides(fill=guide_legend(title="Tipo de pedido"))
 
-
+ggsave(file="plot3.svg", plot=plot3)
 
 # Item 2 ----------------------------------------------------
 
@@ -325,18 +335,18 @@ soma_estados <- soma_estados %>% tibble()
 
 write_csv2(x = soma_estados, file = 'tabela_estados_total.csv')
 
-
-
+library(sf)
 df_mapa_total <- get_brmap("State") %>% 
   inner_join(soma_estados, c("nome" = "variable"))
 
-df_mapa_total %>% 
+
+mapa1 <- df_mapa_total %>% 
   ggplot() +
   geom_sf(aes(fill = value)) +
   theme_void() +
   guides(fill=guide_legend(title="Contagem\nTotal"))
 
-
+ggsave(file="mapa1.svg", plot=mapa1)
 
 
 ## Total de concedidos por estado em 2019
@@ -382,12 +392,13 @@ write_csv2(x = soma_estados_19, file = 'tabela_estados_2019.csv')
 df_mapa_total_19 <- get_brmap("State") %>% 
   inner_join(soma_estados_19, c("nome" = "variable"))
 
-df_mapa_total_19 %>% 
+mapa2 <- df_mapa_total_19 %>% 
   ggplot() +
   geom_sf(aes(fill = value)) +
   theme_void() +
   guides(fill=guide_legend(title="Contagem\n2019"))
 
+ggsave(file="mapa2.svg", plot=mapa2)
 
 ## Total de concedidos por estado em 2020
 df_estados_20 <- df %>% filter(ano == 2020) %>% select(acre:tocantins)
@@ -430,12 +441,13 @@ write_csv2(x = soma_estados_20, file = 'tabela_estados_2020.csv')
 df_mapa_total_20 <- get_brmap("State") %>% 
   inner_join(soma_estados_20, c("nome" = "variable"))
 
-df_mapa_total_20 %>% 
+mapa3 <- df_mapa_total_20 %>% 
   ggplot() +
   geom_sf(aes(fill = value)) +
   theme_void() +
   guides(fill=guide_legend(title="Contagem\n2020"))
 
+ggsave(file="mapa3.svg", plot=mapa3)
 
 
 # Item 4 ----------------------------------------------------
@@ -569,7 +581,7 @@ df_loko <- df %>% select(X1, total_m545, m54, m544, m543, i21, c61, j18) %>% mel
 
 
 
-df_loko %>%
+grafico4 <- df_loko %>%
   mutate(variable = case_when(
     variable == "total_m545" ~ "M54.5",
     variable == "m54"        ~ "M54",
@@ -593,8 +605,7 @@ df_loko %>%
   ylab('Contagem de Benefício por CID-10') +
   xlab('Meses (Jan de 2019 a Dez de 2020)')
 
-ggsave("grafico 4.png", dpi=300)
-
+ggsave(file="grafico4.svg", plot=grafico4)
 
 # item 7 ----------------------------------------------------------------------------
 

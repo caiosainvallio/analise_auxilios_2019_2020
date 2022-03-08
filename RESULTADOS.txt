@@ -1,0 +1,463 @@
+# Item 1 --------------------------------
+
+graficos no wuahts
+
+
+# Item 2 ----------------------------------------------------
+
+## Media e dp da idade total cid_m545 -----------------------
+media_idade desv_idade
+        <dbl>      <dbl>
+1        47.8       11.0
+
+
+## Media e dp da idade total cid_m545 por ano ---------------
+  ano media_idade desv_idade
+  <dbl>       <dbl>      <dbl>
+1  2019        47.6       11.1
+2  2020        48.0       10.8
+
+
+
+## Sexo Masculino -------------------------------------------
+### Freq e prop sexo masculino total cid_m545 ---------------
+ freq_sexo_masc prop_sexo_masc
+           <dbl>          <dbl>
+1          26003          0.525
+
+
+
+### Freq e prop sexo masculino total cid_m545 em 2019 --------
+ freq_sexo_masc prop_sexo_masc
+           <dbl>          <dbl>
+1          18929          0.523
+
+
+
+
+
+## Sexo Feminino -------------------------------------------
+### Freq e prop sexo feminino total cid_m545 ---------------
+freq_sexo_masc prop_sexo_masc
+           <dbl>          <dbl>
+1          23488          0.475
+
+
+
+### Freq e prop sexo feminino total cid_m545 em 2019 --------
+freq_sexo_masc prop_sexo_masc
+           <dbl>          <dbl>
+1          17271          0.477
+
+
+### Freq e prop sexo feminino total cid_m545 em 2020 --------
+freq_sexo_masc prop_sexo_masc
+           <dbl>          <dbl>
+1           6217          0.468
+
+
+## Perimetro urbano -------------------------------------------
+### Freq e prop perimetro urbano total cid_m545 ---------------
+freq_urbano prop_urbano
+        <dbl>       <dbl>
+1       23784       0.914
+
+
+### Freq e prop perimetro urbano total cid_m545 em 2019---------------
+
+ freq_urbano prop_urbano
+        <dbl>       <dbl>
+1       11471       0.900
+
+
+
+
+### Freq e prop perimetro urbano total cid_m545 em 2020---------------
+
+freq_urbano prop_urbano
+        <dbl>       <dbl>
+1       12313       0.926
+
+
+
+
+
+## Perimetro rural -------------------------------------------
+### Freq e prop perimetro rural total cid_m545 ---------------
+freq_rural prop_rural
+       <dbl>      <dbl>
+1       2249     0.0864
+
+
+### Freq e prop perimetro rural total cid_m545 em 2019---------------
+freq_rural prop_rural
+       <dbl>      <dbl>
+1       1271     0.0997
+
+
+
+
+### Freq e prop perimetro rural total cid_m545 em 2020---------------
+
+freq_rural prop_rural
+       <dbl>      <dbl>
+1        978     0.0736
+
+
+
+## Vinculo dependentes filho -------------------------------------------
+### Freq e prop filho total cid_m545 ---------------
+freq_filho prop_filho
+       <dbl>      <dbl>
+1       8060      0.163
+
+
+
+
+### Freq e prop filho total cid_m545 em 2019---------------
+
+freq_filho prop_filho
+       <dbl>      <dbl>
+1       5895      0.163
+
+
+### Freq e prop perimetro urbano total cid_m545 em 2020---------------
+freq_filho prop_filho
+       <dbl>      <dbl>
+1       2165      0.163
+
+
+
+
+
+
+## Vinculo dependentes nao_informado -------------------------------------------
+### Freq e prop filho total cid_m545 ---------------
+
+ freq_nao_informado prop_nao_informado
+               <dbl>              <dbl>
+1              41431              0.837
+
+
+
+
+### Freq e prop filho total cid_m545 em 2019---------------
+ freq_nao_informado prop_nao_informado
+               <dbl>              <dbl>
+1              30305              0.837
+
+
+
+### Freq e prop perimetro urbano total cid_m545 em 2020---------------
+  freq_nao_informado prop_nao_informado
+               <dbl>              <dbl>
+1              11126              0.837
+
+
+
+
+# Item 3 -------------------------------------------------------------
+
+
+mapa do brasil no wuhautsapp
+
+
+# Item 4 ----------------------------------------------------
+AS PROPORCOES DO ITEM 4 JA ESTAO MULTIPLICADAS POR 100
+
+
+## Soma categotias total ------------------------------------
+
+  variable                value     prop
+  <fct>                   <dbl>    <dbl>
+1 autonomo                 7449 15.1    
+2 desempregado             6993 14.1    
+3 domestico                1788  3.61   
+4 empregado               27306 55.2    
+5 empresario                  1  0.00202
+6 facultativo              1187  2.40   
+7 optante_pela_lei_618474    93  0.188  
+8 segurado_especial        4544  9.18   
+9 trabalhador_avulso        132  0.267  
+
+
+
+## Soma categotias 2019 ------------------------------------
+
+ variable                value     prop
+  <fct>                   <dbl>    <dbl>
+1 autonomo                 5556 15.3    
+2 desempregado             4879 13.5    
+3 domestico                1288  3.56   
+4 empregado               19899 55.0    
+5 empresario                  1  0.00276
+6 facultativo               859  2.37   
+7 optante_pela_lei_618474    52  0.144  
+8 segurado_especial        3568  9.86   
+9 trabalhador_avulso        100  0.276 
+
+
+## Soma categotias 2020 ------------------------------------
+
+ variable                value   prop
+  <fct>                   <dbl>  <dbl>
+1 autonomo                 1893 14.2  
+2 desempregado             2114 15.9  
+3 domestico                 500  3.76 
+4 empregado                7407 55.7  
+5 empresario                  0  0    
+6 facultativo               328  2.47 
+7 optante_pela_lei_618474    41  0.308
+8 segurado_especial         976  7.34 
+9 trabalhador_avulso         32  0.241
+
+
+
+
+
+
+# item 5 -------------------------------------------------------------
+
+
+
+graficos no whuhutassp
+
+
+
+
+# Item 6 --------------------------------------------------------------------------
+
+grafico no whatsaatp
+
+
+
+# item 7 ----------------------------------------------------------------------------
+AS PROPORCOES DO ITEM 7 JA ESTAO MULTIPLICADAS POR 100
+
+
+## Benef total -------------------------------------------
+### amp_aocial_pessoa_portadora_aeficiencia ---------------
+
+freq  prop
+  <dbl> <dbl>
+1   277 0.560
+
+
+### aposent_invalidez_acidente_trabalho ---------------
+freq  prop
+  <dbl> <dbl>
+1   299 0.604
+
+
+### aposentadoria_invalidez_previdenciaria ---------------
+
+freq  prop
+  <dbl> <dbl>
+1  2064  4.17
+
+
+### auxilio_acidente ---------------
+ freq   prop
+  <dbl>  <dbl>
+1    18 0.0364
+
+
+### auxilio_acidente_previdenciario ---------------
+
+ freq   prop
+  <dbl>  <dbl>
+1     7 0.0141
+
+
+### auxilio_doenca_por_acidente_do_trabalho ---------------
+
+ freq  prop
+  <dbl> <dbl>
+1  6025  12.2
+
+
+
+### auxilio_doenca_revidenciario ---------------
+  freq  prop
+  <dbl> <dbl>
+1 40805  82.4
+
+
+
+
+
+
+
+
+
+
+## Benef 2019-------------------------------------------
+### amp_aocial_pessoa_portadora_aeficiencia ---------------
+
+ freq  prop
+  <dbl> <dbl>
+1   183 0.505
+
+
+### aposent_invalidez_acidente_trabalho ---------------
+freq  prop
+  <dbl> <dbl>
+1   284 0.784
+
+
+### aposentadoria_invalidez_previdenciaria ---------------
+
+freq  prop
+  <dbl> <dbl>
+1  1850  5.11
+
+
+
+### auxilio_acidente ---------------
+ freq   prop
+  <dbl>  <dbl>
+1    16 0.0442
+
+
+
+
+### auxilio_acidente_previdenciario ---------------
+ freq   prop
+  <dbl>  <dbl>
+1     7 0.0193
+
+
+
+### auxilio_doenca_por_acidente_do_trabalho ---------------
+freq  prop
+  <dbl> <dbl>
+1  4262  11.8
+
+
+### auxilio_doenca_revidenciario ---------------
+
+freq  prop
+  <dbl> <dbl>
+1 29601  81.8
+
+
+## Benef 2020-------------------------------------------
+### amp_aocial_pessoa_portadora_aeficiencia ---------------
+
+ freq  prop
+  <dbl> <dbl>
+1    94 0.707
+
+
+### aposent_invalidez_acidente_trabalho ---------------
+ freq  prop
+  <dbl> <dbl>
+1    15 0.113
+
+
+### aposentadoria_invalidez_previdenciaria ---------------
+
+   freq  prop
+  <dbl> <dbl>
+1   214  1.61
+
+
+### auxilio_acidente ---------------
+
+ freq   prop
+  <dbl>  <dbl>
+1     2 0.0150
+
+
+### auxilio_acidente_previdenciario ---------------
+
+freq  prop
+  <dbl> <dbl>
+1     0     0
+
+
+### auxilio_doenca_por_acidente_do_trabalho ---------------
+ freq  prop
+  <dbl> <dbl>
+1  1763  13.3
+
+
+
+### auxilio_doenca_revidenciario ---------------
+freq  prop
+  <dbl> <dbl>
+1 11204  84.3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
